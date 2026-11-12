@@ -1,0 +1,18 @@
+// Переворачивает все карточки сразу
+document.querySelectorAll('ef-flashcard .flip-btn, ef-flashcard .flip-card-inner').forEach(c => c.click());
+// Скроллит в конец списка, чтобы сработал триггер готовности
+document.querySelector('ef-flashcard:last-child')?.scrollIntoView({ behavior: 'smooth' });
+
+const text = "In my opinion, this topic is truly fascinating and requires careful thought and practical consideration. I believe that developing positive daily habits and maintaining a healthy balance in life is essential for long-term success. Furthermore, learning from experienced mentors and working collaboratively with others can significantly accelerate personal growth and professional achievement.";
+const ta = document.querySelector('textarea');
+if (ta) {
+  ta.value = text;
+  ta.dispatchEvent(new Event('input', { bubbles: true }));
+  ta.dispatchEvent(new Event('change', { bubbles: true }));
+}
+
+change "top" to "...player"
+document.querySelectorAll('video, audio').forEach(el => {
+  el.playbackRate = 16.0;
+  el.play();
+});
